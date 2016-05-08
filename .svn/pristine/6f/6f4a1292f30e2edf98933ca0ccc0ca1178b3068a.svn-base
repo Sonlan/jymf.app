@@ -1,0 +1,6 @@
+.product_rst {
+    padding:8px 10px 8px 40px;
+    background:url(../img/line.png) no-repeat 15px;
+    border-bottom:dotted 1px;
+    font-weight: normal;
+}

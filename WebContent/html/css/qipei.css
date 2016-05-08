@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    margin: 0 auto;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+ul, li {
+    list-style: none outside none;
+}
+
+.desc {
+    margin: 0px auto;
+    padding: 10px 5px 10px 5px;
+    letter-spacing: 0.1em;
+}
+
+.desc p {
+	color: rgb(51, 51, 51);
+	line-height: 25px;
+}
+
+.query_result{
+    border: 1px solid #cfcfcf;
+}

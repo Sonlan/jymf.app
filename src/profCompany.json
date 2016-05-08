@@ -1,0 +1,22 @@
+{
+    "companys": [
+        {
+            "id":358000056,
+            "isCompany":false,
+            "isProduct":true,
+            "ids":""
+        },
+        {
+            "id":358000020,
+            "isCompany":false,
+            "isProduct":true,
+            "ids":"100005,100006"
+        },
+        {
+            "id":358000368,
+            "isCompany":true,
+            "isProduct":true,
+            "ids":"100001"
+        }
+    ]
+}

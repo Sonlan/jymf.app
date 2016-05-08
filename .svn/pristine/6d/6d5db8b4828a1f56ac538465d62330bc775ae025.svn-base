@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.jymf.dao.WXRedMapper">
+	<resultMap id="BaseResultMap" type="org.jymf.entity.WXRed">
+		<result column="id" property="id" jdbcType="VARCHAR" />
+		<result column="re_openid" property="re_openid" jdbcType="VARCHAR" />
+		<result column="nickname" property="nickname" jdbcType="VARCHAR" />
+		<result column="total_amount" property="total_amount" jdbcType="VARCHAR" />
+		<result column="get_time" property="get_time" jdbcType="VARCHAR" />
+		<result column="qrcode" property="qrcode" jdbcType="VARCHAR" />
+		<result column="mark" property="mark" jdbcType="VARCHAR" />
+		<result column="prodno" property="prodno" jdbcType="VARCHAR" />
+		<result column="produnit" property="produnit" jdbcType="VARCHAR" />
+		<result column="company" property="company" jdbcType="VARCHAR" />
+		<result column="address" property="address" jdbcType="VARCHAR" />
+		<result column="let_num" property="let_num" jdbcType="VARCHAR" />
+		<result column="receive_flag" property="receive_flag" jdbcType="VARCHAR" />
+		<result column="result_code" property="result_code" jdbcType="VARCHAR" />
+		<result column="msg_id" property="msg_id" jdbcType="VARCHAR" />
+		<result column="create_time" property="create_time" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, re_openid, nickname, total_amount, get_time, qrcode, mark, prodno, 
+		produnit, company, address, let_num, receive_flag, result_code, msg_id, create_time
+	</sql>
+	<insert id="insert" parameterType="org.jymf.entity.WXRed">
+		insert into tbl_wxred
+		(
+		<include refid="Base_Column_List" />
+		) values (
+		#{id}, #{re_openid}, #{nickname}, #{total_amount}, #{get_time}, #{qrcode}, #{mark}, #{prodno}, 
+		#{produnit}, #{company}, #{address}, #{let_num}, #{receive_flag}, #{result_code} , #{msg_id}, #{create_time}
+		)
+	</insert>
+</mapper>

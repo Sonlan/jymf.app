@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+ul, li {
+    list-style: none outside none;
+}
+
+.result_img{
+/*     height:150px;*/
+    max-width:75%;
+}
+
+.pdtSlide{
+	margin-top:-5px;
+    padding-top:5px;
+    border: 1px solid #cfcfcf;
+    border-top:none;
+    border-radius: 5px 5px 5px 5px;
+    text-align:center;
+}
+
+.pdtCompany{
+    padding:20px 0 10px 0;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px 5px 5px 5px;
+    border-bottom:1px dashed  #cfcfcf; 
+    text-align:center;
+}
+
+.product_base_title{
+	margin-top:10px;
+	padding:10px 0 10px 0;
+    border: 1px solid #cfcfcf;
+    border-bottom:1px dashed  #cfcfcf; 
+    border-radius: 5px 5px 5px 5px;
+    color:red;
+    font-size:16px;
+    text-align:center;
+}
+
+.product_base {   
+    margin-top:-5px;
+    padding:5px 0 15px 0;
+    border: 1px solid #cfcfcf;
+    border-top:none;
+    border-radius: 5px 5px 5px 5px;
+    letter-spacing: 0.1em;
+    padding-left:10px;
+    padding-right:8px;
+}
+
+.product_base li {
+	color: rgb(51, 51, 51);
+	line-height: 25px;
+}
+
+.product_base p {
+	color: rgb(51, 51, 51);
+	line-height: 25px;
+}
+p{
+    text-indent: 2em;
+}

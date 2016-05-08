@@ -1,0 +1,6 @@
+.product_rst {
+    padding:8px 10px 8px 40px;
+    background:url(../img/yiwu.jpg) no-repeat 5px;
+    background-size:28px 40px;
+    border-bottom:dotted 1px;
+}

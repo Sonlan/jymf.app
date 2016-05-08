@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	margin: 0 auto;
+    background:#f7f7f7;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.radius {
+    border-radius: 5px 5px 5px 5px;
+}
+
+.qckfooter{
+	height:40px;
+	font-size: 12px;
+    text-align:center;  
+    width:100%; 
+    line-height:100%;
+    color:#bbb;
+}
+.logo{
+	background:url(../img/logo.png) no-repeat center;
+	height:170px;
+	margin-top:30px;
+}
+.labelchk{
+	margin:20px 36px 0px 36px;
+}
+
+.chektext {
+    height: 40px;
+    text-align: left;
+    color: #929292;
+    font-weight: bold;
+    font-size:18px;
+    border: 2px solid #00aeff;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.checkbtn {
+    margin: 20px auto;
+    background:url(../img/lchka.png) no-repeat center;
+    background-size:98% 100%;
+    display: block; 
+    height: 40px; 
+    width: 100%; 
+    padding-left: 10px;
+}
+.checkbtn:active {
+    background:url(../img/lchkb.png) no-repeat center;
+    padding-left: 10px;
+}
+
+.error {
+  margin:10px 0px 10px 0px;
+  height:30px;
+  color: red;
+  font-size: 15px;
+}
+

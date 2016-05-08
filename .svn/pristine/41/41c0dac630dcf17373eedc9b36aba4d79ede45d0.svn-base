@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+	<excludes>
+		<pattern>/static/*</pattern>
+		<pattern>/label/error</pattern>
+		<pattern>/index/*</pattern>
+		<pattern>/check</pattern>
+	</excludes>
+ 
+    <decorator name="moible" page="label/index.jsp">
+        <pattern>/m/*</pattern>
+    </decorator>
+
+</decorators>

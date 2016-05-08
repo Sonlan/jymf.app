@@ -1,0 +1,79 @@
+package org.jymf.web;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang.StringUtils;
+import org.jymf.entity.ThirdUser;
+import org.jymf.service.impl.ThirdUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller
+@RequestMapping(value="/m")
+public class ThirdPartLoginController {
+	@Autowired
+	ThirdUserService tUserServ;
+	/**
+	 * 第三方登录的用户数据入库
+	 * @return 返回登录状态
+	 */
+	@RequestMapping(value="/thirdLogin",method=RequestMethod.POST)
+	public String login(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			// 第三方id
+			String openid = request.getParameter("openid")==null?"":request.getParameter("openid").trim();
+			// 查询此用户是否已经存在
+			if (StringUtils.isEmpty(openid)) {
+				return "FAILED";
+			}
+			if (tUserServ.getUserInfoByOpenId(openid)!=null) {
+				return "SUCCESS";
+			}
+			// 昵称
+			String nickname= request.getParameter("nickname")==null?"":request.getParameter("nickname").trim();	
+			// 性别(1男 2女)
+			String genderTemp = request.getParameter("gender");
+			if (genderTemp == null) {
+				genderTemp = "0";// 没有传性别参数
+    		} else if ("男".equals(genderTemp)){
+				genderTemp = "1";
+			} else if ("女".equals(genderTemp)) {
+				genderTemp = "2";
+			}
+			int gender = Integer.parseInt(genderTemp);	
+			// 国家
+			String country = request.getParameter("country")==null?"":request.getParameter("country").trim();	
+			// 省
+			String province= request.getParameter("province")==null?"":request.getParameter("province").trim();		
+			// 市
+			String city= request.getParameter("city")==null?"":request.getParameter("city").trim();		
+			//URL链接
+			String headimgurl= request.getParameter("headimgurl")==null?"":request.getParameter("headimgurl").trim();
+			// 微信用户特权信息
+			String privilege= request.getParameter("privilege")==null?"":request.getParameter("privilege").trim();		
+			// 微信用户统一标识
+			String unionid= request.getParameter("unionid")==null?"":request.getParameter("unionid").trim();	
+			ThirdUser tUser = new ThirdUser();
+			tUser.setOpenid(openid);
+			tUser.setNickname(nickname);
+			tUser.setGender(gender);
+			tUser.setCountry(country);
+			tUser.setProvince(province);
+			tUser.setCity(city);
+			tUser.setHeadimgurl(headimgurl);
+			tUser.setPrivilege(privilege);
+			tUser.setUnionid(unionid);
+			tUserServ.insertUser(tUser);
+			
+			return "SUCCESS";
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("ERROR");
+			return "FAILED";
+		}
+	}
+}
